@@ -1,0 +1,26 @@
+.splitpane {
+    border: solid 1px #cccccc;
+    height: calc(100% - 2px);
+    display: flex;
+    flex-direction: row;
+}
+
+.splitpane { 
+	> .leftside {
+    	width: 20%;
+		flex-grow: 0;
+	}
+
+	> .resizer {
+		width: 4px;
+		background-color: #000000;
+	}
+
+	> .resizer:hover {
+		cursor: col-resize;
+	}
+
+	> .rightside {
+		flex-grow: 1;
+	}
+}

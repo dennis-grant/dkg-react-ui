@@ -1,0 +1,45 @@
+.collapsable {
+    > header {
+		display: flex;
+	}
+
+	> header > .hidedetails,
+	> header > .showdetails {
+		font-weight: bold;
+		cursor: pointer;
+		margin-right: 4px;
+		padding-top: 3px;
+		padding-bottom: 3px;
+		padding-right: 3px;
+	}
+
+	&.collapsed > header > .hidedetails {
+		display: none;
+	}	
+
+	&.expanded > header > .showdetails {
+		display: none;
+	}
+
+	> header > title {
+		display: block;
+		padding-top: 3px;
+	}
+
+	> section {
+		display: flex;
+		flex-direction: column;
+		margin-left: 25px;
+	}
+
+	&.collapsed > section {
+		display: none;
+	}
+
+	&.isLeaf > header {
+		> .hidedetails,
+		> .showdetails {
+			display: none;
+		}
+	}	
+}

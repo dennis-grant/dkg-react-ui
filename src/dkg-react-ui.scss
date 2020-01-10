@@ -1,0 +1,153 @@
+/*========================= TabPane =========================*/
+
+.tabs {
+    display: flex;
+    flex-direction: column;
+}
+
+.tabs {
+	header {
+		display: flex;
+    	flex-direction: row;
+		flex-grow: 0;
+	}
+
+	header {
+		.tab {
+			cursor: pointer;
+			padding-left: 10px;
+			padding-right: 10px;
+			padding-top: 5px;
+			padding-bottom: 5px;
+			border-bottom: solid 1px #cccccc;
+		}
+
+		.tab[active=yes] {
+			font-weight: bold;
+			border-bottom: solid 3px #000000;
+		}
+	}
+
+	.panels {
+		display: flex;
+	}
+
+	.panels {
+		.panel {
+			flex-grow: 1;
+			display: none;
+			padding: 10px;
+		}
+
+		.panel[active=yes] {
+			display: block;
+		}
+	}
+}
+
+
+/*========================= SplitPane =========================*/
+
+.splitpane {
+    border: solid 1px #cccccc;
+    height: calc(100% - 2px);
+    display: flex;
+    flex-direction: row;
+}
+
+.splitpane { 
+	> .leftside {
+    	width: 20%;
+		flex-grow: 0;
+	}
+
+	> .resizer {
+		width: 4px;
+		background-color: #000000;
+	}
+
+	> .resizer:hover {
+		cursor: col-resize;
+	}
+
+	> .rightside {
+		flex-grow: 1;
+	}
+}
+
+
+/*========================= Tree =========================*/
+
+.collapsable {
+    > header {
+		display: flex;
+	}
+
+	> header > .hidedetails,
+	> header > .showdetails {
+		font-weight: bold;
+		cursor: pointer;
+		margin-right: 4px;
+		padding-top: 3px;
+		padding-bottom: 3px;
+		padding-right: 3px;
+	}
+
+	&.collapsed > header > .hidedetails {
+		display: none;
+	}	
+
+	&.expanded > header > .showdetails {
+		display: none;
+	}
+
+	> header > title {
+		display: block;
+		padding-top: 3px;
+	}
+
+	> section {
+		display: flex;
+		flex-direction: column;
+		margin-left: 25px;
+	}
+
+	&.collapsed > section {
+		display: none;
+	}
+
+	&.isLeaf > header {
+		> .hidedetails,
+		> .showdetails {
+			display: none;
+		}
+	}	
+}
+
+
+/*========================= Grid =========================*/
+
+.grid {
+    display: grid;
+}
+
+.grid {
+    > div {
+	    box-sizing: border-box;
+	    padding-left: 2px;
+    }
+
+    > .row-even {
+        background-color: #dddddd;
+    }
+
+    &.has-header .row0 {
+        border-left: solid 1px #000000;
+        background-color: #cccccc;
+        font-weight: bold; 
+
+        :first-child {
+            border-left: 0px;
+        }
+    }
+}
