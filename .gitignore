@@ -12,6 +12,13 @@
 /build
 
 # misc
+/src/index.js
+/src/index.scss
+/src/logo.svg
+/src/serviceWorker.js
+/src/setupTests.js
+/src/App.test.js
+
 /public
 /.vscode
 React-README.md
