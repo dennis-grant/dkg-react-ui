@@ -20,19 +20,16 @@ class App extends Component {
                  {title: "lev4 ->24"}
                ]},
               {title: "level 3 -- 2"}
-            ],
-            expanded: false
+            ]
           },
           {
             title: "second child",
             items: [
               { title: "petit enfant one" },
               { title: "petit enfant deux" }
-            ],
-            expanded: false
+            ]
           }
-        ],
-        expanded: true
+        ]
       },
       tabPaneInfo: createTabPaneData(["Description", "Features", "Screen shots"]),
       gridInfo: createGridData(

@@ -9,20 +9,20 @@ export class Tree extends Component {
 
   _renderTree(treeData, level, path) {
     let isLeaf = (treeData.items === undefined);
+    let showItems = (isLeaf === false && treeData.expanded === true);
     let pathStr = path.join(":");
-
 
     return (
       <Collapsable
         key={pathStr}
         title={treeData.title}
-        expanded={treeData.expanded}
+        expanded={treeData.expanded === true}
         level={level}
         path={path}
         isLeaf={isLeaf}
         onExpand={this.props.onExpand}
         onCollapse={this.props.onCollapse}>
-          {(isLeaf === false) ? 
+          {(showItems === true) ? 
             treeData.items.map(
               (item, index) => this._renderTree(item, level + 1, path.concat([index]))
             ) 
