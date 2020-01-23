@@ -22,13 +22,14 @@ export class TabPane extends Component {
     else
       return [this.props.children]
   }
-  
+
   render() {
     let tabPaneChildren = this.tabPaneChildren();
     let tabPaneData = this.props.tabPaneData;
+    let extraClassName = this.props.className !== undefined ? this.props.className : "";
 
     return (
-      <div className="tabs">
+      <div className={`tabs ${extraClassName}`}>
         <header>
           {
             tabPaneData.labels.map(
@@ -194,12 +195,11 @@ export class Tree extends Component {
         isLeaf={isLeaf}
         onExpand={this.props.onExpand}
         onCollapse={this.props.onCollapse}>
-          {(showItems === true) ? 
-            treeData.items.map(
-              (item, index) => this._renderTree(item, level + 1, path.concat([index]))
-            ) 
-            : 
-            []
+          {(showItems === true)
+            ? treeData.items.map(
+                (item, index) => this._renderTree(item, level + 1, path.concat([index]))
+              )
+            : []
           }
       </Collapsable>
     );
@@ -261,7 +261,7 @@ const updateTreeBranch = (treeData, path, updateInfo) => {
       )
     });
   }
-}
+};
 
 
 /*========================= Grid =========================*/

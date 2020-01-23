@@ -20,13 +20,14 @@ export class TabPane extends Component {
     else
       return [this.props.children]
   }
-  
+
   render() {
     let tabPaneChildren = this.tabPaneChildren();
     let tabPaneData = this.props.tabPaneData;
+    let extraClassName = this.props.className !== undefined ? this.props.className : "";
 
     return (
-      <div className="tabs">
+      <div className={`tabs ${extraClassName}`}>
         <header>
           {
             tabPaneData.labels.map(
