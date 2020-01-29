@@ -362,8 +362,8 @@ class Media extends Component {
 
     return (
       this.props.media.name.endsWith(".mp4")
-        ? <video className={classNameSelected} onClick={this.mediaClicked}>
-            <source src={mediaName} type="video/mp4"/>
+        ? <video className={classNameSelected} onClick={this.mediaClicked} preload>
+            <source src={mediaName} type="video/mp4; codecs=avc1.42E01E,mp4a.40.2"/>
           </video>
         : <img
             className={classNameSelected}
@@ -392,8 +392,8 @@ class MagnifiedMedia extends Component {
       <div className="magnified-media">
         <div className="cover" onClick={this.coverClicked}></div>
         {this.props.media.name.endsWith(".mp4")
-          ? <video controls>
-              <source src={mediaName} type="video/mp4"/>
+          ? <video controls preload>
+              <source src={mediaName} type="video/mp4; codecs=avc1.42E01E,mp4a.40.2"/>
             </video>
           : <img src={mediaName} alt={this.props.media.caption} />
         }
