@@ -1,3 +1,6 @@
+
+/*========================= Grid =========================*/
+
 .grid {
   display: grid;
   border: solid 1px #dddddd;
@@ -6,7 +9,8 @@
 .grid {
   > div {
     box-sizing: border-box;
-    padding-left: 2px;
+    padding-left: 6px;
+    padding-right: 6px;
   }
 
   > .row-even {
@@ -21,5 +25,19 @@
     :first-child {
       border-left: 0px;
     }
+  }
+
+  > .highlighted-row,
+  > .selected-row {
+    background-color: lightblue;
+  }
+
+  > .no-items {
+    grid-column: 1/-1;
+    border: solid 0px red;
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
