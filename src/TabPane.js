@@ -1,6 +1,8 @@
-import React, {Component} from 'react';
-import './TabPane.scss';
+import React, {Component} from 'react';    // exclude from merge
+import './TabPane.scss';                   // exclude from merge
 
+
+/*========================= TabPane =========================*/
 
 export class TabPane extends Component {
   constructor(props) {

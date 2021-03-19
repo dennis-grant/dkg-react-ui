@@ -1,6 +1,8 @@
-import React, {Component} from 'react';
-import './MediaViewer.scss';
+import React, {Component} from 'react';    // exclude from merge
+import './MediaViewer.scss';               // exclude from merge
 
+
+/*========================= MediaViewer =========================*/
 
 export class MediaViewer extends Component {
   constructor(props) {

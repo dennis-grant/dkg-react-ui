@@ -1,0 +1,31 @@
+<project name="dkg-react-ui" default="get-libs" basedir=".">
+  <property name="src.dir" location="src"/>
+  <property name="dist.dir" location="dist"/>
+  <property name="repo.dir" location="c:/dkg-repo"/>
+
+  <target name="get-libs">
+  </target>
+
+  <target name="merge-components">
+    <concat destfile="${dist.dir}/dkg-react-ui.js" force="no">
+      <filelist
+        dir="${src.dir}"
+        files="dkg-react-ui-header.js, TabPane.js, SplitPane.js, Tree.js, Grid.js, MediaViewer.js"/>
+      <filterchain>
+        <linecontains negate="true">
+          <contains value="exclude from merge"/>
+        </linecontains>
+      </filterchain>
+    </concat>
+
+    <concat destfile="${dist.dir}/dkg-react-ui.scss" force="no">
+      <filelist dir="${src.dir}" files="TabPane.scss, SplitPane.scss, Tree.scss, Grid.scss, MediaViewer.scss"/>
+    </concat>
+  </target>
+
+  <target name="dist" depends="merge-components">
+    <copy todir="${repo.dir}/dkg-react-ui" overwrite="yes" verbose="yes" includeEmptyDirs="yes">
+      <fileset dir="${dist.dir}"/>
+    </copy>
+  </target>
+</project>

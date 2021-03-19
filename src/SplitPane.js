@@ -1,6 +1,8 @@
-import React, {Component} from 'react';
-import './SplitPane.scss';
+import React, {Component} from 'react';    // exclude from merge
+import './SplitPane.scss';                 // exclude from merge
 
+
+/*========================= SplitPane =========================*/
 
 export class SplitPane extends Component {
   constructor(props) {

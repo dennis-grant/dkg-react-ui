@@ -1,6 +1,8 @@
-import React, {Component} from 'react';
-import './Tree.scss';
+import React, {Component} from 'react';    // exclude from merge
+import './Tree.scss';                      // exclude from merge
 
+
+/*========================= Tree =========================*/
 
 export class Tree extends Component {
   render() {
@@ -25,7 +27,7 @@ export class Tree extends Component {
           {(showItems === true)
             ? treeData.items.map(
                 (item, index) => this._renderTree(item, level + 1, path.concat([index]))
-              ) 
+              )
             : []
           }
       </Collapsable>
