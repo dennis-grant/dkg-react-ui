@@ -1,6 +1,13 @@
 import React, {Component} from 'react';
 import './App.scss';
-import {Tree, expandTreeBranch, collapseTreeBranch, TabPane, createTabPaneData, selectTab, SplitPane, Grid, createGridData} from './dkg-react-ui';
+import {Tree, expandTreeBranch, collapseTreeBranch} from './Tree';
+import {TabPane, createTabPaneData, selectTab} from './TabPane';
+import {SplitPane} from './SplitPane';
+import {Grid, createGridData} from './Grid';
+import './Tree.scss';
+import './TabPane.scss';
+import './SplitPane.scss';
+import './Grid.scss';
 
 
 class App extends Component {
