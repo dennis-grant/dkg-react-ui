@@ -1,3 +1,9 @@
 .App {
   text-align: center;
 }
+
+.splitpane { 
+  > .leftside {
+    width: 50%;
+  }
+}

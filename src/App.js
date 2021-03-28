@@ -1,13 +1,9 @@
 import React, {Component} from 'react';
-import './App.scss';
 import {Tree, expandTreeBranch, collapseTreeBranch} from './Tree';
 import {TabPane, createTabPaneData, selectTab} from './TabPane';
 import {SplitPane} from './SplitPane';
-import {Grid, createGridData} from './Grid';
-import './Tree.scss';
-import './TabPane.scss';
-import './SplitPane.scss';
-import './Grid.scss';
+import {DemoGrid} from './DemoGrid';
+import './App.scss';
 
 
 class App extends Component {
@@ -39,16 +35,6 @@ class App extends Component {
         ]
       },
       tabPaneInfo: createTabPaneData(["Description", "Features", "Screen shots"]),
-      gridInfo: createGridData(
-        [1, 3, 1],
-        [
-          ["Last Name", "First Name", "Hobby"],
-          ["a", "c", "b"],
-          ["Grant", "Dennis", "Soccer"],
-          ["Brown", "Carla", "Sing"],
-          ["Shuster", "Wayne", "Acting"]
-        ]
-      )
     };
     this.expandTree = this.expandTree.bind(this);
     this.collapseTree = this.collapseTree.bind(this);
@@ -79,8 +65,8 @@ class App extends Component {
         <div>first tab panel</div>
         <Tree treeData={this.state.treeInfo} onExpand={this.expandTree} onCollapse={this.collapseTree} />
         <SplitPane>
-          <Grid gridData={this.state.gridInfo} />
-          <div>app right sided!!</div>
+          <DemoGrid/>
+          <div style={{padding: "6px"}}>app right sided!!</div>
         </SplitPane>
       </TabPane>
     );
