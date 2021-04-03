@@ -1,4 +1,4 @@
-<project name="dkg-react-ui" default="get-libs" basedir=".">
+<project name="dkg-react-ui" default="dist" basedir=".">
   <property name="src.dir" location="src"/>
   <property name="dist.dir" location="dist"/>
   <property name="repo.dir" location="c:/dkg-repo"/>
