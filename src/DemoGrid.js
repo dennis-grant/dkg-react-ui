@@ -10,7 +10,7 @@ const rowSelectionChange = (indices) => {
 class TestInput extends Component {
   render() {
     return (
-      <input type="text" value={this.props.v} style={{width: "100%"}}/>
+      <input type="text" value={this.props.v} style={{width: "calc(100% - 4px)"}}/>
     );
   }
 }

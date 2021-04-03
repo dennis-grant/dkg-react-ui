@@ -247,6 +247,14 @@ class DefaultGridModel extends GridModel {
   data(columnIndex, rowIndex) {
     return this._dataRows[rowIndex][columnIndex];
   }
+
+  row(rowIndex) {
+    return this._dataRows[rowIndex];
+  }
+
+  set rows(rows) {
+    this._dataRows = (this._hasHeader === true) ? rows.slice(1) : rows;
+  }
 }
 
 
