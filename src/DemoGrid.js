@@ -8,9 +8,11 @@ const rowSelectionChange = (indices) => {
 
 
 class TestInput extends Component {
+  nullOnChange = e => {}
+
   render() {
     return (
-      <input type="text" value={this.props.v} style={{width: "calc(100% - 4px)"}}/>
+      <input type="text" value={this.props.v} onChange={this.nullOnChange} style={{width: "calc(100% - 4px)"}}/>
     );
   }
 }

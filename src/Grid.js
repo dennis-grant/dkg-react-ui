@@ -5,10 +5,12 @@ import './Grid.scss';                      // exclude from merge
 /*========================= Grid =========================*/
 
 class GridCheckBox extends Component {
+  nullOnChange = e => {}
+
   render() {
     return (
       <div className={"grid-checkbox"}>
-        <input type="checkbox" checked={this.props.value === true} onClick={this.props.onClick} />
+        <input type="checkbox" checked={this.props.value === true} onClick={this.props.onClick} onChange={this.nullOnChange} />
       </div>
     );
   }
